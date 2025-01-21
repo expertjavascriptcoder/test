@@ -5,8 +5,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     }).addTo(map);
 // Load data for each layer
 var layer1, layer2;
-fetch('countries.geojson').then(res => res.json()).then(data => { layer1 = L.geoJSON(data) });
-fetch('layer2.geojson').then(res => res.json()).then(data => { layer2 = L.geoJSON(data) });
+fetch('ne_110m_admin_1_states_provinces_shp.geojson').then(res => res.json()).then(data => { layer1 = L.geoJSON(data) });
+fetch('countries.geojson').then(res => res.json()).then(data => { layer2 = L.geoJSON(data) });
 // Handle layer 1 toggle
 document.getElementById('toggleLayer1').addEventListener('click', function() {
     if(map.hasLayer(layer1)) {
